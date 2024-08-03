@@ -205,6 +205,10 @@ void mainMenu()
             goto menu;
             break;
         case 6:
+        
+            goto menu;
+            break;
+        case 7:
             cout << "Terimakasih telah bertransaksi disini..." << endl;
             break;
         default:
