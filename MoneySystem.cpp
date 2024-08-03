@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include <iomanip>
+using namespace std;
 
 #define persenan 0.1
-
-using namespace std;
 
 int n = 0;
 char nasabah;
@@ -13,7 +12,7 @@ long int no;
 double setor, tarik;
 bool ketemu = false;
 
-struct
+struct Nasabah
 {
     char nama[30];
     long int norek;
@@ -162,52 +161,54 @@ void findUser()
 
 void mainMenu()
 {
-
-    system("cls");
-menu:
-    cout << "==============================================" << endl;
-    cout << "|             SAVING MONEY SYSTEM            |" << endl;
-    cout << "|============================================|" << endl;
-    cout << "|============  'MENU TRANSAKSI'  ============|" << endl;
-    cout << "|1.    Pendaftaran Nasabah                   |" << endl;
-    cout << "|2.    Penyetoran                            |" << endl;
-    cout << "|3.    Penarikan                             |" << endl;
-    cout << "|4.    Cetak Daftar Nasabah                  |" << endl;
-    cout << "|5.    Cari Nasabah                          |" << endl;
-    cout << "|6.    Keluar                                |" << endl;
-    cout << "|============================================|" << endl;
-    cout << endl
-         << "Pilihan transaksi : ";
-    int pil;
-    switch (pil)
+    do
     {
-    case 1:
-        regUser();
-        goto menu;
-        break;
-    case 2:
-        deposit();
-        goto menu;
-        break;
-    case 3:
-        withdrawal();
-        goto menu;
-        break;
-    case 4:
-        printUser();
-        goto menu;
-        break;
-    case 5:
-        findUser();
-        goto menu;
-        break;
-    case 6:
-        cout << "Terimakasih telah bertransaksi disini..." << endl;
-        break;
-    default:
-        cout << "Pilihan tidak valid, silahkan coba lagi" << endl;
-        break;
-    }
+        system("cls");
+    menu:
+        cout << "==============================================" << endl;
+        cout << "|             SAVING MONEY SYSTEM            |" << endl;
+        cout << "|============================================|" << endl;
+        cout << "|============  'MENU TRANSAKSI'  ============|" << endl;
+        cout << "|1.    Pendaftaran Nasabah                   |" << endl;
+        cout << "|2.    Penyetoran                            |" << endl;
+        cout << "|3.    Penarikan                             |" << endl;
+        cout << "|4.    Cetak Daftar Nasabah                  |" << endl;
+        cout << "|5.    Cari Nasabah                          |" << endl;
+        cout << "|6.    Keluar                                |" << endl;
+        cout << "|============================================|" << endl;
+        cout << endl
+             << "Pilihan menu : ";
+        int pil;
+        switch (pil)
+        {
+        case 1:
+            regUser();
+            goto menu;
+            break;
+        case 2:
+            deposit();
+            goto menu;
+            break;
+        case 3:
+            withdrawal();
+            goto menu;
+            break;
+        case 4:
+            printUser();
+            goto menu;
+            break;
+        case 5:
+            findUser();
+            goto menu;
+            break;
+        case 6:
+            cout << "Terimakasih telah bertransaksi disini..." << endl;
+            break;
+        default:
+            cout << "Pilihan tidak valid, silahkan coba lagi" << endl;
+            break;
+        }
+    } while (pil != 6);
 }
 
 int main()
