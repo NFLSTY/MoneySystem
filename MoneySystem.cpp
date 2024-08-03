@@ -176,7 +176,8 @@ void mainMenu()
         cout << "|3.    Penarikan                             |" << endl;
         cout << "|4.    Cetak Daftar Nasabah                  |" << endl;
         cout << "|5.    Cari Nasabah                          |" << endl;
-        cout << "|6.    Keluar                                |" << endl;
+        cout << "|6.    Hapus Nasabah                         |" << endl;
+        cout << "|7.    Keluar                                |" << endl;
         cout << "|============================================|" << endl;
         cout << endl
              << "Pilihan menu : ";
