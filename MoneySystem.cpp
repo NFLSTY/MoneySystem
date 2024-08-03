@@ -101,6 +101,8 @@ void withdrawal()
         {
             nas[pos].saldo = nas[pos].saldo - tarik;
             cout << endl;
+
+            //tambahkan fungsi untuk bukti penarikan
         }
         else
             cout << "Maaf saldo anda tidak mencukupi" << endl;
