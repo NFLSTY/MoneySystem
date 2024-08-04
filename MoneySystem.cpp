@@ -161,6 +161,11 @@ void findUser()
     return;
 }
 
+void deleteUser()
+{
+    //insert delet program
+}
+
 void mainMenu()
 {
     do
