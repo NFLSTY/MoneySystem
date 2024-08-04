@@ -163,7 +163,8 @@ void findUser()
 
 void deleteUser()
 {
-    //insert delet program
+    system("cls");
+    //insert delete program
 }
 
 void mainMenu()
