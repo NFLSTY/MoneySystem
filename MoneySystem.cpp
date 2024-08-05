@@ -184,9 +184,8 @@ void mainMenu()
         system("cls");
     menu:
         cout << "==============================================" << endl;
-        cout << "|             SAVING MONEY SYSTEM            |" << endl;
+        cout << "|                 MONEY SYSTEM               |" << endl;
         cout << "|============================================|" << endl;
-        cout << "|============  'MENU TRANSAKSI'  ============|" << endl;
         cout << "|1.    Pendaftaran Nasabah                   |" << endl;
         cout << "|2.    Penyetoran                            |" << endl;
         cout << "|3.    Penarikan                             |" << endl;
