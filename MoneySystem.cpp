@@ -39,7 +39,7 @@ lagi:
     }
     else
     {
-        cout << "masukkan nama anda       : ";
+        cout << "Masukkan nama anda       : ";
         cin >> nas[n].nama;
         cout << "Masukkan saldo awal anda : ";
         cin >> nas[n].saldo;
@@ -102,7 +102,7 @@ void withdrawal()
             nas[pos].saldo = nas[pos].saldo - tarik;
             cout << endl;
 
-            //tambahkan fungsi untuk bukti penarikan
+            // tambahkan fungsi untuk bukti penarikan
         }
         else
             cout << "Maaf saldo anda tidak mencukupi" << endl;
@@ -164,7 +164,30 @@ void findUser()
 void deleteUser()
 {
     system("cls");
-    //insert delete program
+    cout << "Masukkan nomor rekening: ";
+    cin >> no;
+    for (i = 0; i < n; i++)
+    {
+        if (no == (nas[i].norek))
+        {
+            pos = i;
+            ketemu = true;
+            break;
+        }
+        else
+            ketemu = false;
+    }
+    if (ketemu)
+    {
+        cout << "Rekening atas nama " << nas[n].nama << "akan dihapus" << endl;
+        cout << "Mohon pastikan untuk mengecek saldo terlebih dahulu" << endl;
+        cout << "\n\n Ketik 1 untuk konfirmasi penghapusan";
+    }else
+    {
+        cout << "Nomor rekening tidak ditemukan!" << endl;
+        return;
+    }
+    
 }
 
 void mainMenu()
@@ -211,7 +234,7 @@ void mainMenu()
             goto menu;
             break;
         case 6:
-        
+
             goto menu;
             break;
         case 7:
