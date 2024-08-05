@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <iomanip>
+#include <ctime>
 using namespace std;
 
 #define persenan 0.1
@@ -11,6 +12,11 @@ int i, pil, x, pos, a = 0;
 long int no;
 double setor, tarik;
 bool ketemu = false;
+
+time_t t = time(0);
+tm *now = localtime(&t);
+const char *dayNames[] = {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
+int dayOfWeek = now->tm_wday;
 
 struct Nasabah
 {
@@ -102,7 +108,17 @@ void withdrawal()
             nas[pos].saldo = nas[pos].saldo - tarik;
             cout << endl;
 
-            // tambahkan fungsi untuk bukti penarikan
+            cout << "=========================================" << endl;
+            cout << "              BUKTI PENARIKAN            " << endl;
+            cout << "=========================================" << endl;
+            cout << "Hari      : " << dayNames[dayOfWeek] << "" << endl;
+            cout << "Tanggal   : " << __DATE__ << "" << endl;
+            cout << "Waktu     : " << __TIME__ << "" << endl;
+            cout << "=========================================" << endl;
+            cout << "No Rekening      : " << nas[pos].norek << endl;
+            cout << "Nama Nasabah     : " << nas[pos].nama << endl;
+            cout << "Jumlah Penarikan : " << tarik << endl;
+            cout << "=========================================" << endl;
         }
         else
             cout << "Maaf saldo anda tidak mencukupi" << endl;
@@ -121,7 +137,7 @@ void printUser()
     for (i = 0; i < n; i++)
     {
         cout << setw(4) << i + 1;
-        cout << setw(17) << nas[i].norek;
+        cout << setw(14) << nas[i].norek;
         cout << setw(14) << nas[i].nama;
         cout << setw(14) << ((nas[i].saldo) + (nas[i].saldo * 0.1)) << endl;
     }
@@ -161,35 +177,6 @@ void findUser()
     return;
 }
 
-void deleteUser()
-{
-    system("cls");
-    cout << "Masukkan nomor rekening: ";
-    cin >> no;
-    for (i = 0; i < n; i++)
-    {
-        if (no == (nas[i].norek))
-        {
-            pos = i;
-            ketemu = true;
-            break;
-        }
-        else
-            ketemu = false;
-    }
-    if (ketemu)
-    {
-        cout << "Rekening atas nama " << nas[n].nama << "akan dihapus" << endl;
-        cout << "Mohon pastikan untuk mengecek saldo terlebih dahulu" << endl;
-        cout << "\n\n Ketik 1 untuk konfirmasi penghapusan";
-    }else
-    {
-        cout << "Nomor rekening tidak ditemukan!" << endl;
-        return;
-    }
-    
-}
-
 void mainMenu()
 {
     do
@@ -205,7 +192,6 @@ void mainMenu()
         cout << "|3.    Penarikan                             |" << endl;
         cout << "|4.    Cetak Daftar Nasabah                  |" << endl;
         cout << "|5.    Cari Nasabah                          |" << endl;
-        cout << "|6.    Hapus Nasabah                         |" << endl;
         cout << "|7.    Keluar                                |" << endl;
         cout << "|============================================|" << endl;
         cout << endl
@@ -234,10 +220,6 @@ void mainMenu()
             goto menu;
             break;
         case 6:
-
-            goto menu;
-            break;
-        case 7:
             cout << "Terimakasih telah bertransaksi disini..." << endl;
             break;
         default:
