@@ -1,6 +1,6 @@
 #include <iostream>
-#include <stdlib.h>
 #include <iomanip>
+#include <stdlib.h>
 #include <ctime>
 using namespace std;
 
@@ -8,7 +8,7 @@ using namespace std;
 
 int n = 0;
 char nasabah;
-int i, pil, x, pos, a = 0;
+int i, x, pos, a = 0;
 long int no;
 double setor, tarik;
 bool ketemu = false;
@@ -28,15 +28,17 @@ struct Nasabah
 void regUser()
 {
     system("cls");
+    ketemu = false; 
 lagi:
     cout << "Masukkan nomor rekening  : ";
     cin >> no;
     for (i = 0; i < n; i++)
     {
         if (no == nas[i].norek)
+        {
             ketemu = true;
-        else
-            ketemu = false;
+            break;
+        }
     }
     if (ketemu)
     {
@@ -50,16 +52,17 @@ lagi:
         cout << "Masukkan saldo awal anda : ";
         cin >> nas[n].saldo;
     }
+    nas[n].norek = no;
     n = n + 1;
-    nas[i].norek = no;
     return;
 }
 
 void deposit()
 {
-    system("clas");
-    cout << "masukkan nomor rekening : ";
+    system("cls");
+    cout << "Masukkan nomor rekening : ";
     cin >> no;
+    ketemu = false;
     for (i = 0; i < n; i++)
     {
         if (no == (nas[i].norek))
@@ -68,8 +71,6 @@ void deposit()
             ketemu = true;
             break;
         }
-        else
-            ketemu = false;
     }
     if (ketemu)
     {
@@ -88,6 +89,7 @@ void withdrawal()
     system("cls");
     cout << "Masukkan nomor rekening : ";
     cin >> no;
+    ketemu = false;
     for (i = 0; i < n; i++)
     {
         if (no == (nas[i].norek))
@@ -96,8 +98,6 @@ void withdrawal()
             ketemu = true;
             break;
         }
-        else
-            ketemu = false;
     }
     if (ketemu)
     {
@@ -154,6 +154,7 @@ void findUser()
     cout << "Masukkan nomor rekening yang akan dicari : ";
     cin >> no;
     cout << endl;
+    ketemu = false; 
     for (i = 0; i < n; i++)
     {
         if (no == (nas[i].norek))
@@ -162,8 +163,6 @@ void findUser()
             ketemu = true;
             break;
         }
-        else
-            ketemu = false;
     }
     if (ketemu)
     {
@@ -179,44 +178,37 @@ void findUser()
 
 void mainMenu()
 {
+    int pil;
     do
     {
-        system("cls");
-    menu:
-        cout << "==============================================" << endl;
-        cout << "|                 MONEY SYSTEM               |" << endl;
-        cout << "|============================================|" << endl;
-        cout << "|1.    Pendaftaran Nasabah                   |" << endl;
-        cout << "|2.    Penyetoran                            |" << endl;
-        cout << "|3.    Penarikan                             |" << endl;
-        cout << "|4.    Cetak Daftar Nasabah                  |" << endl;
-        cout << "|5.    Cari Nasabah                          |" << endl;
-        cout << "|7.    Keluar                                |" << endl;
-        cout << "|============================================|" << endl;
-        cout << endl
-             << "Pilihan menu : ";
-        int pil;
+        cout << "===================================" << endl;
+        cout << "|           MONEY SYSTEM          |" << endl;
+        cout << "|=================================|" << endl;
+        cout << "|1.    Pendaftaran Nasabah        |" << endl;
+        cout << "|2.    Penyetoran                 |" << endl;
+        cout << "|3.    Penarikan                  |" << endl;
+        cout << "|4.    Cetak Daftar Nasabah       |" << endl;
+        cout << "|5.    Cari Nasabah               |" << endl;
+        cout << "|6.    Keluar                     |" << endl;
+        cout << "|=================================|" << endl;
+        cout << "\nPilihan menu : ";
+        cin >> pil;
         switch (pil)
         {
         case 1:
             regUser();
-            goto menu;
             break;
         case 2:
             deposit();
-            goto menu;
             break;
         case 3:
             withdrawal();
-            goto menu;
             break;
         case 4:
             printUser();
-            goto menu;
             break;
         case 5:
             findUser();
-            goto menu;
             break;
         case 6:
             cout << "Terimakasih telah bertransaksi disini..." << endl;
