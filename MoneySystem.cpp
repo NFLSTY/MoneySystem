@@ -111,9 +111,9 @@ void withdrawal()
             cout << "=========================================" << endl;
             cout << "              BUKTI PENARIKAN            " << endl;
             cout << "=========================================" << endl;
-            cout << "Hari      : " << dayNames[dayOfWeek] << "" << endl;
-            cout << "Tanggal   : " << __DATE__ << "" << endl;
-            cout << "Waktu     : " << __TIME__ << "" << endl;
+            cout << "Hari      : " << dayNames[dayOfWeek] << endl;
+            cout << "Tanggal   : " << __DATE__ << endl;
+            cout << "Waktu     : " << __TIME__ << endl;
             cout << "=========================================" << endl;
             cout << "No Rekening      : " << nas[pos].norek << endl;
             cout << "Nama Nasabah     : " << nas[pos].nama << endl;
@@ -181,16 +181,16 @@ void mainMenu()
     int pil;
     do
     {
-        cout << "===================================" << endl;
-        cout << "|           MONEY SYSTEM          |" << endl;
-        cout << "|=================================|" << endl;
-        cout << "|1.    Pendaftaran Nasabah        |" << endl;
-        cout << "|2.    Penyetoran                 |" << endl;
-        cout << "|3.    Penarikan                  |" << endl;
-        cout << "|4.    Cetak Daftar Nasabah       |" << endl;
-        cout << "|5.    Cari Nasabah               |" << endl;
-        cout << "|6.    Keluar                     |" << endl;
-        cout << "|=================================|" << endl;
+        cout << "=================================" << endl;
+        cout << "           MONEY SYSTEM          " << endl;
+        cout << "=================================" << endl;
+        cout << "1.  Pendaftaran Nasabah          " << endl;
+        cout << "2.  Penyetoran                   " << endl;
+        cout << "3.  Penarikan                    " << endl;
+        cout << "4.  Cetak Daftar Nasabah         " << endl;
+        cout << "5.  Cari Nasabah                 " << endl;
+        cout << "6.  Keluar                       " << endl;
+        cout << "=================================" << endl;
         cout << "\nPilihan menu : ";
         cin >> pil;
         switch (pil)
