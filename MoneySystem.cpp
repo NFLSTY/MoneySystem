@@ -141,8 +141,7 @@ void printUser()
         cout << setw(14) << nas[i].nama;
         cout << setw(14) << ((nas[i].saldo) + (nas[i].saldo * 0.1)) << endl;
     }
-    cout << endl
-         << endl;
+    cout << \n\n;
     cout << "|====|================|================|================|" << endl;
     cout << "jumlah total saldo diatas telah ditambah bunga 10%" << endl;
     return;
