@@ -151,18 +151,7 @@ void findUser()
 {
     system("cls");
     cout << "Masukkan nomor rekening yang akan dicari : ";
-    cin >> no;
-    cout << endl;
-    ketemu = false; 
-    for (i = 0; i < n; i++)
-    {
-        if (no == (nas[i].norek))
-        {
-            pos = i;
-            ketemu = true;
-            break;
-        }
-    }
+    
     if (ketemu)
     {
         cout << "Nomor rekening            : " << nas[pos].norek << endl;
